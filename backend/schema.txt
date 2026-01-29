@@ -1,0 +1,28 @@
+USER
+- user_id
+- email
+- name
+- created_at
+
+ACCOUNT
+- account_id
+- user_id
+- type (personal | business)
+- name
+- created_at
+
+CATEGORY
+- category_id
+- user_id
+- name
+
+EXPENSE
+- expense_id
+- user_id
+- account_id
+- category_id
+- amount
+- currency
+- description
+- expense_date
+- created_at
