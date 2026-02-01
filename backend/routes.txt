@@ -1,0 +1,20 @@
+USERS
+POST /users
+GET /users/{user_id}
+
+ACCOUNTS
+POST /accounts
+GET /accounts/{user_id}
+
+CATEGORIES
+POST /categories
+GET /categories/{user_id}
+
+EXPENSES
+POST /expenses
+GET /expenses/{user_id}
+GET /expenses/{user_id}/{account_id}
+DELETE /expenses/{expense_id}
+
+SYSTEM
+GET /health
