@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import (
+from backend.models import (
     UserCreate,
     AccountCreate,
     CategoryCreate,
