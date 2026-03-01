@@ -1,0 +1,100 @@
+Commands/Knowledge Learned:
+		- "tar -xf" = specifies extract and file
+		- "&&" = conditionally (only if previous was successful)
+		- "&" = sequentially (regardless of previous)
+		- "python -m venv venv" = run venv module in venv folder
+			- "source venv\bin\activate" = activates virtual environment
+				- "source" allows the shell to moify shell settings (PATH, PS1), pip installed packages are only for venv environment
+					- Can also be run with "."
+		- Uvicorn = lightning-fast ASGI (Asynchronous Server Gateway Interface) web server implementation for Python
+			- "uvicorn main:app --reload" = reload uvicorn server
+		- "*..." = wildcare search to for anything specific (*.py ignores python files, example for when using with Docker ignore)
+		- ".file" = makes file hidden within Linux file structure
+		- "file.md" = markdown, file used to outline repository purpose, setup, and usage (often Github)
+		- Docker containers SHOULD NOT run as root (Least privilege)
+		- Chown = changes ownership of directories to users:groups (<owner>:<group>)
+			- "-R" = recursively
+		- Docker-Compose = lists of containers to run within one file
+		- Boto3 = AWS SDK for Python
+		- "export DYNAMODB_ENDPOINT=http://localhost:8000" = sets local environment variable, until terminal is closed/computer is restarted
+
+
+		- git ...
+			- "init" = enable directory as github repo
+			- "add" = stage changes for commit ("." include this folder and everything inside)
+			- "commit -m "..."" = create commit with message/comment
+			- "remote add origin URL" = ADD/SET origin (Github repository URL) to use for actions
+			- "remote set-url origin URL" = UPDATE origin (Github repository URL) to use for actions
+			- "log" = shows commits with sha checksum
+			- "push -u origin main/master" = push commit to origin
+				- "push" = push commit once main/master is established
+			- "revert "sha"" = specifically removes applied commit
+			- "cherry-pick "sha"" = reapplies changes made through specific commit
+			- ".dockerignore" file = same as .dockerignore, tells git what not to copy into commit
+
+		- APIs (C.R.U.D.)
+			- Create = POST
+			- Read = GET
+			- Update = PUT
+			- Delete = DELETE
+
+		- Pydantic (data mode) = python library used with FastAPI to validate JSON, enforce types, and generate API docs (schema enforcer)
+
+		- Dockerfile = recipe, steps/commands on HOW to build docker image (add folders, dependencies, commands, etc)
+		- Docker Image = result of dockerfile instructions that can be shared (machine build (not running) with OS, installed packages, running code, etc - immutable (can't be changes))
+			- "docker build -t expense-app ." = using "Dockerfile", builds "expense-app" runable Docker image in /var/lib/docker ("." indicates where the docker file is stored, current directory)
+			- "docker run -p 8000:8000 expense-app" = run "expense-app" on "host_port:container_port" (left = port on my computer, right = port when container is listening)
+			- "docker run -it expense-app /bin/bash" = run expense-app image, open an interactive terminal, and run Bash to explore the container
+				- "t" = creates terminal (format interface), but does not accept commands
+				- "i" = created interactive shell, but no terminal to format commands/output
+			- ".dockerignore" = same as .gitignore, tells Docker what not to copy into image
+
+		- Dockerfile = recipe, steps/commands on HOW to build docker image (add folders, dependencies, commands, etc)
+		- Docker Image = result of dockerfile instructions that can be shared (machine build (not running) with OS, installed packages, running code, etc - immutable (can't be changes))
+		- Docker Compose = defines AND runs multiple Docker containers as a single unity (docker compose up)
+			- services:
+				- web:
+				- db
+
+
+Basic Outline:
+	1. Local Dev Environment
+	2. Minimal API (no AWS yet)
+	3. Dockerize
+	4. Local Docker testing
+	5. AWS Account Hardening
+	6. ECR
+	7. ECS + ALB
+	8. DynamoDB
+	9. Logging
+	10. CI/CD
+	11. Terraform
+	12. Monitoring + Alerts
+
+Step 1 - Local Development Preparation
+	- Install Git
+	- Install Python
+	- Install VS Code
+	- Install Docker Desktop
+
+Step 2 - Create Python program
+	- Used FastAPI, Uvicorn, and git to backup
+
+Step 3 - Dockerize program
+	- Used Dockerfile to create docker image from Python program
+	- create .dockerignore file to remove any files/directories that are not needed within Docker image
+	- Freeze requirements.txt to ensure future python package versions do not cause issues
+
+
+
+
+
+
+ Investers/End user
+  Executives
+   Sales
+	Coders
+	 DevOps
+	   Infra
+	     Networking
+	       Cyber
